@@ -1,0 +1,33 @@
+{
+    "version": 1,
+    "disable_existing_loggers": false,
+    "formatters": {
+        "fileFormatter": {
+            "format": "%(asctime)s %(name)s:%(lineno)s %(funcName)s [%(levelname)s]: %(message)s",
+            "datefmt": "%Y-%m-%d %H:%M:%S"
+        }
+    },
+
+    "handlers": {
+        "fileHandler": {
+            "class": "logging.handlers.RotatingFileHandler",
+            "level": "INFO",
+            "formatter": "fileFormatter",
+            "filename": "./log/json_logger.log",
+            "maxBytes": 1000000,
+            "backupCount": 3
+        }
+    },
+
+    "loggers": {
+        "json_logger": {
+            "level": "DEBUG",
+            "handlers": ["fileHandler"],
+            "propagate": false
+        }
+    },
+
+    "root": {
+        "level": "INFO"
+    }
+}
