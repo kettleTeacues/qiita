@@ -2,3 +2,5 @@
 _*
 log
 .venv
+node_modules
+build
